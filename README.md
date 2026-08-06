@@ -1,3 +1,19 @@
+# Real Flight
+
+```bash
+# Terminal 1
+./sh_files/rspx4.sh
+
+# Terminal 2
+roslaunch px4ctrl run_ctrl_real.launch
+
+# Terminal 3
+roslaunch diff_planner real_single_drone.launch
+
+# Terminal 4
+```
+
+
 <img src="images/nus_logo.png" alt="nus logo" align="right" height="80" />
 
 # Diff-Planner
