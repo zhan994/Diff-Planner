@@ -21,11 +21,8 @@ git submodule update --init --recursive
 
 ```bash
 # RoboSense
-git clone https://github.com/RoboSense-LiDAR/rslidar_sdk.git \
-  src/realflight_modules/rslidar_sdk
-git -C src/realflight_modules/rslidar_sdk submodule update --init --recursive
-
-
+git clone https://github.com/zhan994/nanobot_sdk.git \
+  src/realflight_modules/nanobot_sdk
 ```
 
 ## 2. 安装依赖
@@ -116,8 +113,8 @@ ip route
 正常输出示例：
 
 ```text
-eth0   UP   192.168.1.102/24
-wlan0  UP   192.168.8.238/24
+eth0   UP   192.168.1.102/24 (雷达IP)
+wlan0  UP   192.168.8.238/24 (本机IP)
 ```
 
 ## 4. 编译
@@ -143,7 +140,7 @@ catkin_make
 
 按实际场景补充配置：
 
-- 使用 LIO 的 Z 轴作为高度基准时，将 `EKF2_HGT_REF` 设为 `Vision`。
+- 使用 LIO 的 Z 轴作为高度基准时，将 `EKF2_HGT_REF` 设为 `3`。
 - 室内完全不使用 GNSS 时，可将 `EKF2_GPS_CTRL` 设为 `0`。
 - 修改 EKF 参数后重启飞控。
 
